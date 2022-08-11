@@ -1,23 +1,14 @@
-import logo from './logo.svg';
+import { Dropdown } from './components/dropdown/index';
 import './App.css';
+import { useState } from 'react';
+
+const taskList = ['Profile information', 'Change Password', 'Become PDO', 'Help', 'Log Out']
 
 function App() {
+  const [dropdownShow, setDropdownShow] = useState(false)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Dropdown taskList={taskList} setDropdownShow={setDropdownShow} dropdownShow={dropdownShow}/>
     </div>
   );
 }
